@@ -6,7 +6,7 @@
 LR_IROM1 0x20002000 0x00010000  {    ; 【加载域描述】这段是要告诉链接器，你的程序是存在哪里？我从哪里去找需要执行的代码。
   ER_IROM1 0x20002000 0x00010000  {  ; 【运行域描述】这段是要告诉链接器，你的程序在哪里执行，在ARM Cortex-M系列的绝大多数MCU中加载域以及运行域是在同一个空间上的，即片内Flash。
 ;   *.o (RESET, +First)    ;异常&中断向量表，+First表示强制放到首地址
-;   *(InRoot$$Sections)  ;ARM相关库，InRoot$$Sections是ARM库节的链接标号
+   *(InRoot$$Sections)  ;ARM相关库，InRoot$$Sections是ARM库节的链接标号
    *.o (.dyn_text, +First)
    .ANY (+RO)
    .ANY (+XO)
